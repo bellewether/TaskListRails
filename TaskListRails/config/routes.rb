@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  root 'tasks#index'
+
+  get 'tasks' => 'tasks#index' 
+  get 'tasks/:id', to: 'tasks#show', as: 'soil_sample' #this route shows a specifically identified task from the database
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
