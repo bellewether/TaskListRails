@@ -11,6 +11,8 @@
         <li><%= "#{t.completed_at}" %></li>
       </ul>
 
-      <%= link_to "View task", task_path(t.id) %>
+      <%= link_to "View this task", task_path(t.id) %>
+      <%= link_to "Delete this task", task_path(t.id), method: :delete,
+        data: { confirm: "Are you really really sure?" } %>
     </p>
   <% end %>

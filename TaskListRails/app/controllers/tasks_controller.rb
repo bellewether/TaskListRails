@@ -23,14 +23,19 @@ class TasksController < ApplicationController
     end
   end
 
-  def update
-    @task = Task.find(params[:id])
-    if @task.update(task_params)
-      # SUCCESS
-      redirect_to tasks_path
-    else
-      render :edit
-    end
+  # def update
+  #   @task = Task.find(params[:id])
+  #   if @task.update(task_params)
+  #     # SUCCESS
+  #     redirect_to tasks_path
+  #   else
+  #     render :edit
+  #   end
+  # end
+
+  def destroy
+    Task.find(params[:id]).destroy
+    redirect_to tasks_path
   end
 
   private
