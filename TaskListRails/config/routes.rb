@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
+  root 'tasks#index'
 
   get 'tasks' => 'tasks#index'
   get 'tasks/new' => 'tasks#new'
   post 'tasks' => 'tasks#create'
 
-  root 'tasks#index'
-
   get 'tasks/:id', to: 'tasks#show', as: 'task' #this route shows a specifically identified task from the database
+
+  get 'tasks/:id/edit' => 'tasks#edit', as: 'tasks_edit'
+  patch 'tasks/:id' => 'tasks#update'
 
   delete 'tasks/:id', to: 'tasks#destroy'
 
