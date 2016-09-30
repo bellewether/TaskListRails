@@ -8,11 +8,12 @@
       <ul>
         <li><%= "Title: #{t.name}" %></li>
         <li><%= "Description: #{t.description}" %></li>
-        <li><%= "Completion status: #{t.completion_status}" %></li>        
+        <li><%= "Completion status: #{t.completion_status}" %></li>
         <li><%= "Completed at: #{t.completed_at}" %></li>
       </ul>
 
       <%= link_to "View this task", task_path(t.id) %>
+      <%= link_to "Edit this task", tasks_edit_path(t) %>
       <%= link_to "Delete this task", task_path(t.id), method: :delete,
         data: { confirm: "Are you really really sure?" } %>
     </p>
