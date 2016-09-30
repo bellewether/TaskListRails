@@ -18,6 +18,12 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
 
+    if task_params[:completion_status]
+      task_params[:completion_status] = true
+    else
+      task_params[:completion_status] = false
+    end
+
     if @task.save
       #SAVED SUCCESSFULLY
       redirect_to tasks_path
@@ -45,6 +51,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description, :completed_at)
+    params.require(:task).permit(:name, :description, :completion_status, :completed_at)
   end
 end
