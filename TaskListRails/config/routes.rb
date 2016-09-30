@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
+
+  get 'tasks' => 'tasks#index'
+  get 'tasks/new' => 'tasks#new'
+  post 'tasks' => 'tasks#create'
+
   root 'tasks#index'
 
-  get 'tasks' => 'tasks#index' 
-  get 'tasks/:id', to: 'tasks#show', as: 'soil_sample' #this route shows a specifically identified task from the database
-
-
+  get 'tasks/:id', to: 'tasks#show', as: 'task' #this route shows a specifically identified task from the database
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

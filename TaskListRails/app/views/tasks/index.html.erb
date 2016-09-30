@@ -1,16 +1,16 @@
   <h1>Tasks</h1>
 
+  <%= link_to "Add a new task", tasks_new_path %>
+
   <% @tasks.each do |t| %>
     <p>
       <%= "Task #{t.id}:" %>
       <ul>
         <li><%= "#{t.name}" %></li>
         <li><%= "#{t.description}" %></li>
-        <!-- <li><%= "#{t.completion}" %></li> -->
         <li><%= "#{t.completed_at}" %></li>
       </ul>
 
-      <%= link_to "Find it here", task_path(t) %>
-      <!-- <%= link_to "Edit", task_edit_path(t) %> -->
+      <%= link_to "View task", task_path(t.id) %>
     </p>
   <% end %>
