@@ -9,8 +9,9 @@ completion date/time -->
 <main>
   <ul>
       <li>description: <%= @task.description %></li>
-      <li>completion status: <%= @task.completion_status %></li>
+      <li>completed?: <%= @task.completion_status %></li>
       <li>completed at: <%= @task.completed_at %></li>
   </ul>
+  <%= link_to "Edit this task", tasks_edit_path(@task) %>
   <%= link_to "Return to Tasks List", tasks_path %>
 </main>
