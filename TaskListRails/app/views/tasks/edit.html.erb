@@ -1,17 +1,29 @@
-<h1>Edit Task</h1>
+<header>
+  <h1>Edit Task</h1>
+</header>
 
-<%= form_for @task do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<main>
+  <%= form_for @task do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br></br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br></br>
 
-  <%= f.label :completion_status %>
-  <%= f.check_box :completion_status %>
+    <%= f.label :completion_status %>
+    <%= f.check_box :completion_status %>
+    <br></br>
 
-  <%= f.label :completed_at %>
-  <%= f.date_field :completed_at %>
+    <%= f.label :completed_at %>
+    <%= f.date_field :completed_at %>
+    <br></br>
 
-  <%= f.submit "Submit" %>
-<% end %>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+  <p></p>
+  <p>Changed your mind? <%= link_to "Return to Tasks List", tasks_path %></p>
+
+</main>
