@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+   font: 14px/18px Arial, Serif;
+}
+
+header.task-list {
+  display: inline-block;
+}
+
+main.task-list {
+  display: inline-block;
+  float: right;
+  margin: 95px 270px 0px auto;
+}
