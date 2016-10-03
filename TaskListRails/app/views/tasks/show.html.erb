@@ -2,12 +2,15 @@
 about the task: name, description, completion status, and
 completion date/time -->
 
-<h1>Task#show</h1>
+<header>
+  <h1>Task: <%= @task.name %></h1>
+</header>
 
-<ul>
-    <li>name: <%= @task.name %></li>
-    <li>description: <%= @task.description %></li>
-    <li>completion status: <%= @task.completion_status %></li>
-    <li>completed at: <%= @task.completed_at %></li>
-
-</ul>
+<main>
+  <ul>
+      <li>description: <%= @task.description %></li>
+      <li>completion status: <%= @task.completion_status %></li>
+      <li>completed at: <%= @task.completed_at %></li>
+  </ul>
+  <%= link_to "Return to Tasks List", tasks_path %>
+</main>
