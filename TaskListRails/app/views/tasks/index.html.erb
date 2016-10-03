@@ -1,20 +1,19 @@
-  <h1>Tasks</h1>
+<header class="task-list">
+  <%= image_tag "https://pbs.twimg.com/profile_images/1084277916/Logo.gif",
+      :alt => "get it done" %>
+</header>
 
+<main class="task-list">
+  <h1>Task List</h1>
   <%= link_to "Add a new task", tasks_new_path %>
+    <% @tasks.each do |t| %>
+      <p>
+        <%= "Task #{t.id}: #{t.name}" %>
 
-  <% @tasks.each do |t| %>
-    <p>
-      <%= "Task #{t.id}:" %>
-      <ul>
-        <li><%= "Title: #{t.name}" %></li>
-        <li><%= "Description: #{t.description}" %></li>
-        <li><%= "Completion status: #{t.completion_status}" %></li>
-        <li><%= "Completed at: #{datetime_formatter(t)}" %></li>
-      </ul>
-
-      <%= link_to "View this task", task_path(t.id) %>
-      <%= link_to "Edit this task", tasks_edit_path(t) %>
-      <%= link_to "Delete this task", task_path(t.id), method: :delete,
-        data: { confirm: "Are you really really sure?" } %>
-    </p>
-  <% end %>
+        <%= link_to "View this task", task_path(t.id) %>
+        <%= link_to "Edit this task", tasks_edit_path(t) %>
+        <%= link_to "Delete this task", task_path(t.id), method: :delete,
+          data: { confirm: "Are you really really sure?" } %>
+      </p>
+    <% end %>
+</main>
