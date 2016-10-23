@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create]
 
-  # def login
-  #   # Just a boring static page
-  # end
+  def login
+    # Just a boring static page
+  end
 
   def index
     if session[:user_id].nil?
@@ -33,6 +33,7 @@ class SessionsController < ApplicationController
 
   def logout
     session.delete(:user_id)
+    redirect_to root_path
   end
 
 end

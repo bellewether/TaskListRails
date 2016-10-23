@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # User authentication
   get "/auth/:provider/callback" =>  "sessions#create"
-  #get "/sessions", to: "sessions#index", as: "sessions"
+  get "/sessions", to: "sessions#index", as: "sessions"
   # get "/auth/login", to: "sessions#login", as: "login"
   delete "/auth/logout", to: "sessions#logout", as: "logout"
 

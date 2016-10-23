@@ -2,25 +2,30 @@
   <%= image_tag "https://pbs.twimg.com/profile_images/1084277916/Logo.gif",
       :alt => "get it done" %>
 
-  <% if current_user %>
-    <%= button_to "Log out", sessions_path, { method: :delete, data: { confirm: "Are you sure you want to log out?" }, class: "log-out-button"} %>
+  <% if @current_user %>
+    <%= button_to "Log out", logout_path, { method: :delete, data: { confirm: "Are you sure you want to log out?" }, class: "log-out-button"} %>
   <% else %>
     <%= button_to "Log in with Github", '/auth/github', method: :post, class: "github-button" %>
   <% end %>
-  
+
 </header>
 
 <main class="task-list">
-  <h1>Task List</h1>
-  <%= link_to "Add a new task", tasks_new_path %>
-    <% @tasks.each do |t| %>
-      <p>
-        <%= "Task #{t.id}: #{t.name}" %>
+  <% if @current_user %>
 
-        <%= link_to "View this task", task_path(t.id) %>
-        <%= link_to "Edit this task", tasks_edit_path(t) %>
-        <%= link_to "Delete this task", task_path(t.id), method: :delete,
+    <h1>Task List</h1>
+      <%= link_to "Add a new task", tasks_new_path %>
+      <% @tasks.each do |t| %>
+        <p>
+          <%= "User: #{ t.user_id }: (Task #{ t.id }) #{ t.name }" %>
+
+          <%= link_to "View this task", task_path(t.id) %>
+          <%= link_to "Edit this task", tasks_edit_path(t) %>
+          <%= link_to "Delete this task", task_path(t.id), method: :delete,
           data: { confirm: "Are you really really sure?" } %>
-      </p>
-    <% end %>
+        </p>
+      <% end %>
+  <% else %>
+
+  <% end %>
 </main>
