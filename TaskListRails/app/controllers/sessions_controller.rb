@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:create]
+  skip_before_action :require_login, only: [:login, :create]
 
-  def login
-    # Just a boring static page
+  def login # Ensure that users who are not authenticated see a welcome message and a link to authenticate. No other pages should be viewable by the guest user
+
   end
 
   def index
