@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update]
+
   def index
-     @tasks = Task.all
+     @tasks = @current_user.tasks
   end
 
   def show # should render a new view for the user
@@ -54,4 +56,12 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:name, :description, :completion_status, :completed_at)
   end
+
+  def find_task
+      begin
+        @task = @current_user.tasks.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+        render file: "public/404", status: :not_found
+      end
+    end
 end

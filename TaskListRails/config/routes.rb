@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   delete 'tasks/:id', to: 'tasks#destroy'
 
+  # User authentication
+  get "/auth/:provider/callback" =>  "sessions#create"
+  #get "/sessions", to: "sessions#index", as: "sessions"
+  # get "/auth/login", to: "sessions#login", as: "login"
+  delete "/auth/logout", to: "sessions#logout", as: "logout"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
