@@ -1,12 +1,6 @@
-<!-- The show view should include the complete information
-about the task: name, description, completion status, and
-completion date/time -->
-
-<header>
-  <h1>Task: <%= @task.name %></h1>
-</header>
-
 <main>
+  <h1>Task: <%= @task.name %></h1>
+
   <ul>
       <li>description: <%= @task.description %></li>
       <li>completed?: <%= @task.completion_status %></li>

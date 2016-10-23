@@ -22,8 +22,13 @@ header.task-list {
   display: inline-block;
 }
 
-main.task-list {
+main {
   display: inline-block;
   float: right;
+  margin: 95px 470px 0px auto;
+
+}
+
+main.task-list {
   margin: 95px 270px 0px auto;
 }

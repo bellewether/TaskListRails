@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TaskListRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>TaskListRails</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="task-list">
+      <%= image_tag "https://pbs.twimg.com/profile_images/1084277916/Logo.gif",
+          :alt => "get it done" %>
 
-<%= yield %>
+      
 
-</body>
+    </header>
+
+    <%= yield %>
+
+  </body>
 </html>

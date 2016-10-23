@@ -1,3 +1,6 @@
 <%# Ensure that users who are not authenticated see a welcome message and a link to authenticate. No other pages should be viewable by the guest user %>
-<h1> Welcome! </h1>
-<%= link_to "Log in with GitHub", "/auth/github" %>
+
+<main>
+  <h1> Welcome! </h1>
+    <%= button_to "Log in with Github", '/auth/github', method: :post, class: "github-button" %>
+</main>
