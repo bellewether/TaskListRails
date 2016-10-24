@@ -5,6 +5,7 @@
     <% else %>
       <%= button_to "Log in with Github", '/auth/github', method: :post, class: "github-button" %>
     <% end %>
+    <p></p>
 
     <%= link_to "Add a new task", tasks_new_path %>
     <% @tasks.each do |t| %>
