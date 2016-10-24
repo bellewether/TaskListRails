@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :tasks
 
   validates :email, :uid, :provider, presence: true
+  validates :email, format: {with: /@/}
 
   def self.build_from_github(auth_hash)
     user       = User.new
