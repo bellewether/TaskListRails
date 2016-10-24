@@ -1,11 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyString
-  completion: false
+post_office:
+  name: Post Office
+  description: pick up packages
+  completion_status: true
+  user_id: 1
 
-two:
-  name: MyString
-  description: MyString
-  completion: false
+missing_info:
+  name:
+  description:
+  completion_status:
+  user_id:
+
+no_name:
+  name:
+  description: buy gifts
+  completion_status: false
+  user_id: 2
+
+no_user_id:
+  name: exercise
+  description: swimming
+  completion_status: false
+  user_id:
+
+no_completion_status:
+  name: groceries
+  description: food shopping
+  completion_status:
+  user_id: 3
