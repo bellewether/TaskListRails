@@ -3,12 +3,11 @@ class TasksController < ApplicationController
 
   def index
      @tasks = @current_user.tasks
-     #@tasks = Task.all
   end
 
   def show; end
 
-  def new # add a new task!
+  def new
     @task = Task.new
   end
 
