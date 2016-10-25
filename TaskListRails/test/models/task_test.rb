@@ -9,7 +9,6 @@ class TaskTest < ActiveSupport::TestCase
     assert_not tasks(:missing_info).valid?
     assert_includes tasks(:missing_info).errors, :name
     assert_includes tasks(:missing_info).errors, :user_id
-    assert_includes tasks(:missing_info).errors, :completion_status
   end
 
   test "cannot create a task without a name" do
@@ -22,13 +21,4 @@ class TaskTest < ActiveSupport::TestCase
     assert_includes tasks(:no_user_id).errors, :user_id
   end
 
-  test "cannot create a task doesn't have a completion status" do
-    assert_not tasks(:no_completion_status).valid?
-    assert_includes tasks(:no_completion_status).errors, :completion_status
-  end
-
-  #How to test this relationship?
-  # test "a task's user_id must match the id of the user creating the task" do
-  #
-  # end
 end
