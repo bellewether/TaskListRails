@@ -10,12 +10,12 @@
     <%= link_to "Add a new task", tasks_new_path %>
     <% @tasks.each do |t| %>
       <p>
-        <%= "(User #{ t.user_id }) Task #{ t.id }: #{ t.name }" %>
+        <%= "Task #{ t.id }: #{ t.name }" %>
         <%= link_to "View this task", task_path(t.id) %>
         <%= link_to "Edit this task", tasks_edit_path(t) %>
         <%= link_to "Delete this task", task_path(t.id), method: :delete,
           data: { confirm: "Are you really really sure?" } %>
-        </p>
+      </p>
       <% end %>
 
 </main>
