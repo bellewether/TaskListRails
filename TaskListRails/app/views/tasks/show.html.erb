@@ -3,8 +3,8 @@
 
   <ul>
       <li>description: <%= @task.description %></li>
-      <li>completed?: <%= @task.completion_status %></li>
-      <li>completed at: <%= @task.completed_at %></li>
+      <li>completed: <%= @task.completion_status ? "yes" : "no" %></li>
+      <li>completed at: <%= datetime_formatter(@task) %></li>
   </ul>
   <%= link_to "Edit this task", tasks_edit_path(@task) %>
   <%= link_to "Return to Tasks List", tasks_path %>

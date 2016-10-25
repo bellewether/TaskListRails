@@ -25,7 +25,7 @@ class TasksController < ApplicationController
     end
 
     if @task.save
-      redirect_to tasks_path #tasks_path or task_path?
+      redirect_to tasks_path
     else
       render :new
     end
